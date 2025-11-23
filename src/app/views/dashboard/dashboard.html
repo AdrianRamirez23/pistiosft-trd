@@ -1,0 +1,23 @@
+<div>
+  <h2>Dashboard Financiero</h2>
+
+  <div *ngIf="data">
+    <h3>{{ data.companyName }}</h3>
+
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Monto</th>
+        <th>Tipo</th>
+      </tr>
+
+      <tr *ngFor="let t of data.transactions">
+        <td>{{ t.id }}</td>
+        <td>{{ t.date }}</td>
+        <td>{{ t.amount }}</td>
+        <td>{{ t.type }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
