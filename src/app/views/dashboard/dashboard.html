@@ -1,23 +1,26 @@
-<div>
-  <h2>Dashboard Financiero</h2>
+<div class="container">
+  <div class="container-box">
+    <h2 class="mb-4">Transacciones Financieras</h2>
 
-  <div *ngIf="data">
-    <h3>{{ data.companyName }}</h3>
+    <h4 class="mb-3">{{ data?.companyName }}</h4>
 
-    <table border="1">
-      <tr>
-        <th>ID</th>
-        <th>Fecha</th>
-        <th>Monto</th>
-        <th>Tipo</th>
-      </tr>
-
-      <tr *ngFor="let t of data.transactions">
-        <td>{{ t.id }}</td>
-        <td>{{ t.date }}</td>
-        <td>{{ t.amount }}</td>
-        <td>{{ t.type }}</td>
-      </tr>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>Monto</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of data?.transactions">
+          <td>{{ t.id }}</td>
+          <td>{{ t.date }}</td>
+          <td>${{ t.amount | number }}</td>
+          <td>{{ t.type }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

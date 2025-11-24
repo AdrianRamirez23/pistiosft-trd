@@ -1,6 +1,16 @@
-<h2>Consentimiento TRD</h2>
+<div class="container">
+  <div class="container-box">
+    <h2 class="mb-4">Gestión de Consentimiento</h2>
 
-<p>Estado: <strong>{{ consent ? 'Otorgado' : 'Revocado' }}</strong></p>
+    <p class="lead">
+      Estado actual: 
+      <span class="badge" 
+            [ngClass]="consent ? 'bg-success' : 'bg-danger'">
+        {{ consent ? 'Otorgado' : 'Revocado' }}
+      </span>
+    </p>
 
-<button (click)="grant()">Otorgar</button>
-<button (click)="revoke()">Revocar</button>
+    <button class="btn btn-success me-2" (click)="grant()">Otorgar</button>
+    <button class="btn btn-danger" (click)="revoke()">Revocar</button>
+  </div>
+</div>

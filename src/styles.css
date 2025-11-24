@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: #f5f7fa;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.container-box {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.05);
+  margin-top: 40px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.table {
+  font-size: 14px;
+}

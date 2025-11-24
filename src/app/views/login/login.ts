@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],   // 👈 IMPORTANTE
   templateUrl: './login.html'
 })
 export class LoginComponent {
@@ -20,7 +21,7 @@ export class LoginComponent {
   login() {
     this.auth.login(this.username, this.password).subscribe({
       next: () => this.router.navigate(['/dashboard']),
-      error: () => this.errorMsg = 'Credenciales inválidas'
+      error: () => this.errorMsg = 'Credenciales incorrectas'
     });
   }
 }

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsentService } from '../../services/consent.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-consent',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './consent.html'
 })
 export class ConsentComponent implements OnInit {
